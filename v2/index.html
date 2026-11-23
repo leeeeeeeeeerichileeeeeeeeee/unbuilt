@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UN/BUILT — How the future gets built</title>
+<meta name="description" content="UN/BUILT and The Build Report: robots on site, AI × design, off-world building and Asia's builders, explained by an architect. Sourced stories, no hype.">
+<meta property="og:title" content="UN/BUILT — How the future gets built">
+<meta property="og:description" content="Robots on site, AI × design, off-world building and Asia's builders, explained by an architect.">
+<meta property="og:image" content="https://leeeeeeeeeerichileeeeeeeeee.github.io/unbuilt/img/ep04.jpg">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231F2329'/%3E%3Cpath d='M38 10 L26 54' stroke='%236B4EF6' stroke-width='7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#DCD9D3; --paper-2:#E6E3DE; --card:#F4F3F0; --ink:#1F2329; --ink-2:#3A3F47; --mute:#5B6068;
+  --blue:#2F5DA8; --accent:#6B4EF6; --accent-ink:#4B32C9; --line:3px;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.grid-bg{background-image:linear-gradient(rgba(47,93,168,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(47,93,168,.09) 1px,transparent 1px);background-size:48px 48px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+.wide{font-stretch:125%}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(220,217,211,.92);backdrop-filter:blur(8px);border-bottom:var(--line) solid var(--ink)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.logo{font-weight:900;font-size:22px;letter-spacing:-.01em;text-decoration:none;font-stretch:125%}
+.logo span{color:var(--accent)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center}
+.nav ul a{text-decoration:none;font-size:16px;font-weight:500}
+.nav ul a:hover{color:var(--accent-ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border:0;border-radius:0;background:var(--accent);color:#fff;font:inherit;font-weight:700;font-size:17px;cursor:pointer;text-decoration:none;transition:background .15s,transform .15s}
+.btn:hover{background:var(--accent-ink)}
+.btn:active{transform:translateY(1px)}
+.btn.sm{height:40px;padding:0 18px;font-size:15px}
+.menu{display:none;background:none;border:2px solid var(--ink);height:40px;padding:0 14px;font:inherit;font-weight:600;cursor:pointer}
+
+/* hero */
+.hero{position:relative;padding:88px 0 96px}
+.cross{position:absolute;width:28px;height:28px}
+.cross path{stroke:var(--accent);stroke-width:3}
+.dim{display:flex;align-items:center;gap:12px;max-width:640px;margin-bottom:28px;color:var(--blue)}
+.dim i{display:block;background:var(--blue)}
+.dim .t{width:2px;height:18px}.dim .l{flex:1;height:2px}
+.dim span{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+h1{margin:0;font-size:clamp(52px,9vw,112px);line-height:.94;font-weight:900;letter-spacing:-.025em;font-stretch:125%;max-width:1000px}
+.lead{margin:32px 0 0;font-size:21px;line-height:1.5;max-width:640px;color:var(--ink-2)}
+.signup{display:flex;flex-wrap:wrap;gap:12px;max-width:580px;margin-top:36px}
+.signup input{flex:1 1 260px;min-width:0;height:52px;border:2px solid var(--ink);background:var(--card);padding:0 18px;font:inherit;font-size:17px;color:var(--ink);border-radius:0}
+.signup input::placeholder{color:#7A7F86}
+.note{margin:12px 0 0;font-size:15px;color:var(--mute)}
+.byline{display:flex;gap:16px;align-items:center;margin-top:44px;padding-top:20px;border-top:2px solid var(--ink);max-width:640px}
+.byline .stamp{flex:0 0 52px;height:52px;border:2px solid var(--ink);display:grid;place-items:center;font-weight:900;font-size:13px;font-stretch:125%;background:var(--card)}
+.byline .stamp span{color:var(--accent)}
+.byline p{margin:0;font-size:16px;color:var(--ink-2)}
+
+/* title block (drawing-sheet style) */
+.titleblock{position:absolute;right:0;bottom:96px;width:300px;border:var(--line) solid var(--ink);background:var(--card);font-size:14px}
+.titleblock div{display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid var(--ink)}
+.titleblock div:last-child{border-bottom:0}
+.titleblock dt,.titleblock dd{margin:0;padding:9px 12px}
+.titleblock dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);border-right:1px solid var(--ink)}
+.titleblock dd{font-weight:600}
+
+/* sections */
+section.block{padding:96px 0;border-top:var(--line) solid var(--ink)}
+.sheet{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:40px;flex-wrap:wrap}
+.sheet h2{margin:0;font-size:clamp(32px,4vw,44px);font-weight:800;letter-spacing:-.01em;font-stretch:125%}
+.sheet .mono{color:var(--blue)}
+.sub{margin:-24px 0 40px;font-size:18px;color:var(--ink-2);max-width:620px}
+
+/* rooms = floor plan */
+.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:var(--line) solid var(--ink);border-left:var(--line) solid var(--ink);background:var(--paper-2)}
+.room{position:relative;border-right:var(--line) solid var(--ink);border-bottom:var(--line) solid var(--ink);padding:34px 36px 46px;min-height:210px;transition:background .2s}
+.room:hover{background:var(--card)}
+.room .door{position:absolute;right:0;bottom:0}
+.room .tag{color:var(--mute);margin-bottom:10px}
+.room h3{margin:0 0 10px;font-size:25px;font-weight:800;font-stretch:125%}
+.room p{margin:0;font-size:17px;color:var(--ink-2);max-width:430px}
+
+/* latest issue */
+.issue{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:72px}
+.issue h3{margin:6px 0 16px;font-size:clamp(28px,3.4vw,40px);line-height:1.1;font-weight:800;font-stretch:125%}
+.mock{background:var(--card);border:2px solid var(--ink);box-shadow:10px 10px 0 var(--ink);transform:rotate(-2deg);padding:26px 30px 30px;transition:transform .3s}
+.mock:hover{transform:rotate(0)}
+.mock .hd{display:grid;grid-template-columns:72px 1fr;row-gap:6px;font-size:14px;color:var(--mute);padding-bottom:14px;border-bottom:1px solid #B8B4AD}
+.mock .hd b{color:var(--ink)}
+.mock p{font-size:15px;color:var(--ink-2)}
+.mock h4{margin:0 0 6px;font-size:16px;font-weight:800;font-stretch:115%}
+.mock .take{color:var(--accent-ink);font-weight:700;font-size:14px;margin:14px 0 0}
+.stories{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.story h4{margin:0 0 12px;font-size:22px;line-height:1.3;font-weight:700}
+.story p{margin:0 0 16px;color:var(--ink-2);font-size:17px}
+.story .my{padding-top:12px;border-top:2px solid var(--ink)}
+.story .my b{display:block;color:var(--accent-ink);font-size:14px;margin-bottom:4px}
+.story .my p{color:var(--ink);margin:0}
+
+/* index list (watch + notes) */
+.index{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:150px 120px 1fr 32px;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(31,35,41,.35);text-decoration:none;transition:background .15s,padding .15s}
+a.row:hover{background:var(--card);padding-left:12px;padding-right:12px}
+.row img{width:150px;height:96px;object-fit:cover;border:2px solid var(--ink);background:var(--card)}
+.row .kind{color:var(--blue)}
+.row h4{margin:0 0 4px;font-size:20px;font-weight:700;line-height:1.3}
+.row p{margin:0;font-size:15.5px;color:var(--mute)}
+.row .arr{font-size:22px;text-align:right}
+.row.soon{opacity:.75}
+.fine{font-size:14px;color:var(--mute);margin-top:18px;max-width:760px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{height:36px;padding:0 14px;border:2px solid var(--ink);background:transparent;font:inherit;font-size:14px;font-weight:600;cursor:pointer;border-radius:0}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.hide{display:none}
+
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:var(--line) solid var(--ink);border-left:var(--line) solid var(--ink)}
+.n{border-right:var(--line) solid var(--ink);border-bottom:var(--line) solid var(--ink);padding:28px;display:flex;flex-direction:column;background:var(--paper-2)}
+.n .meta{color:var(--blue);margin-bottom:12px}
+.n h4{margin:0 0 12px;font-size:20px;line-height:1.3;font-weight:700}
+.n p{margin:0 0 10px;font-size:15.5px;color:var(--ink-2)}
+.n a{margin-top:auto;padding-top:12px;font-weight:700;text-decoration:none;color:var(--accent-ink)}
+.n a:hover{text-decoration:underline}
+
+/* schedule */
+.sched{width:100%;border-collapse:collapse;font-size:17px}
+.sched th{text-align:left;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:500;padding:0 0 10px;border-bottom:2px solid var(--ink)}
+.sched td{padding:16px 12px 16px 0;border-bottom:1px solid rgba(31,35,41,.35);vertical-align:top}
+.sched td:first-child{font-weight:700;width:34%}
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:3px 8px}
+
+/* about + join */
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.about h2{margin:0;font-size:clamp(32px,4vw,44px);line-height:1.08;font-weight:800;font-stretch:125%}
+.about p{margin:0 0 18px;font-size:19px;color:var(--ink-2)}
+.join{background:var(--ink);color:var(--paper);padding:88px 0;border-top:var(--line) solid var(--ink)}
+.join h2{margin:0 0 12px;font-size:clamp(36px,5vw,60px);font-weight:900;letter-spacing:-.02em;font-stretch:125%}
+.join p{margin:0;color:#C9C6C0;font-size:19px;max-width:620px}
+.join .signup input{background:#2A2F36;border-color:#C9C6C0;color:#fff}
+.join .note{color:#A9A6A0}
+.foot{padding:32px 0 48px}
+.foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.foot nav{display:flex;gap:22px;flex-wrap:wrap}
+.foot a{text-decoration:none;font-weight:600}
+.foot a:hover{color:var(--accent-ink)}
+
+@media (max-width:980px){.titleblock{position:static;margin-top:48px;width:100%;max-width:420px}.notes{grid-template-columns:1fr}}
+@media (max-width:760px){
+  body{font-size:17px}.wrap{padding:0 20px}
+  .nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:var(--line) solid var(--ink);padding:8px 20px 16px}
+  .nav ul.open{display:flex}.nav ul li{width:100%}.nav ul a{display:block;padding:12px 0;font-size:18px}
+  .menu{display:inline-block}
+  .hero{padding:56px 0 64px}.cross{display:none}
+  .rooms,.issue,.stories,.about{grid-template-columns:1fr}.issue{gap:40px}.mock{transform:none}
+  .row{grid-template-columns:96px 1fr;gap:14px}.row img{width:96px;height:72px}.row .kind{grid-column:2;order:-1;margin-bottom:-10px}.row .arr{display:none}
+  section.block{padding:64px 0}
+  .sched td:first-child{width:auto}
+}
+@media (prefers-reduced-motion:no-preference){.cross{animation:pop .9s ease-out both}@keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body class="grid-bg">
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="UN/BUILT home">UN<span>/</span>BUILT</a>
+    <button class="menu" aria-expanded="false" aria-controls="navlist">Menu</button>
+    <ul id="navlist">
+      <li><a href="#cover">Topics</a></li>
+      <li><a href="#latest">Latest issue</a></li>
+      <li><a href="#watch">Watch</a></li>
+      <li><a href="#notes">Case notes</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a class="btn sm" href="#join">Subscribe</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap" style="position:relative">
+    <svg class="cross" aria-hidden="true" viewBox="0 0 28 28" style="left:18px;top:-30px"><path d="M14 0v28M0 14h28"/></svg>
+    <svg class="cross" aria-hidden="true" viewBox="0 0 28 28" style="right:32px;top:-30px"><path d="M14 0v28M0 14h28"/></svg>
+    <div class="dim" aria-hidden="true"><i class="t"></i><i class="l"></i><span>The Build Report · one email a week</span><i class="l"></i><i class="t"></i></div>
+    <h1>How the future gets built.</h1>
+    <p class="lead">Robots on job sites, AI in the design studio, building on the Moon, and what contractors across Asia are trying. Written by an architect, so every story ends with what it means for the drawings and the site.</p>
+    <form class="signup" action="https://rs-newsletter-a33182.beehiiv.com/subscribe" method="get">
+      <label class="sr" for="em-top">Email address</label>
+      <input id="em-top" type="email" name="email" placeholder="you@studio.com" autocomplete="email" required>
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+    <p class="note">One email a week, about a five-minute read. Free, unsubscribe anytime.</p>
+    <div class="byline">
+      <div class="stamp" aria-hidden="true">U<span>/</span>B</div>
+      <p>By Chi Lee, an architect trained in robotic fabrication (IAAC, UPC) in Barcelona. For architects, engineers and builders who want to know what robots will actually change on site.</p>
+    </div>
+    <dl class="titleblock" aria-label="Project details">
+      <div><dt>Project</dt><dd>UN/BUILT</dd></div>
+      <div><dt>Format</dt><dd>Newsletter + short videos</dd></div>
+      <div><dt>Issued</dt><dd>Weekly</dd></div>
+      <div><dt>Location</dt><dd>Barcelona</dd></div>
+      <div><dt>Sources</dt><dd>Always linked</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="cover" class="block">
+  <div class="wrap">
+    <div class="sheet"><h2>What I cover</h2><span class="mono">Plan · four rooms</span></div>
+    <p class="sub">One floor plan, four rooms. Most weeks walk through all of them.</p>
+    <div class="rooms">
+      <div class="room"><svg class="door" aria-hidden="true" width="46" height="46" viewBox="0 0 46 46"><path d="M46 0A46 46 0 0 0 0 46" fill="none" stroke="#1F2329" stroke-width="1.5"/><path d="M46 0V46" stroke="#1F2329" stroke-width="1.5"/></svg><p class="mono tag">Room 1</p><h3>Robots on Site</h3><p>Layout robots, autonomous site patrols, factories that frame houses. What is running on real jobs, and what is still a demo.</p></div>
+      <div class="room"><svg class="door" aria-hidden="true" width="46" height="46" viewBox="0 0 46 46"><path d="M46 0A46 46 0 0 0 0 46" fill="none" stroke="#1F2329" stroke-width="1.5"/><path d="M46 0V46" stroke="#1F2329" stroke-width="1.5"/></svg><p class="mono tag">Room 2</p><h3>AI × Design</h3><p>The tools changing how buildings get drawn and checked. I try them so you can skip the ones that don't hold up.</p></div>
+      <div class="room"><svg class="door" aria-hidden="true" width="46" height="46" viewBox="0 0 46 46"><path d="M46 0A46 46 0 0 0 0 46" fill="none" stroke="#1F2329" stroke-width="1.5"/><path d="M46 0V46" stroke="#1F2329" stroke-width="1.5"/></svg><p class="mono tag">Room 3</p><h3>Off-World Building</h3><p>Bricks from moon dust, habitats from regolith. Early research, with the limits spelled out.</p></div>
+      <div class="room"><svg class="door" aria-hidden="true" width="46" height="46" viewBox="0 0 46 46"><path d="M46 0A46 46 0 0 0 0 46" fill="none" stroke="#1F2329" stroke-width="1.5"/><path d="M46 0V46" stroke="#1F2329" stroke-width="1.5"/></svg><p class="mono tag">Room 4</p><h3>Made in Asia</h3><p>Contractors in Japan, Korea, China and Taiwan are moving fast. Most of it never shows up in English coverage. It does here.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="latest" class="block">
+  <div class="wrap">
+    <div class="sheet"><h2>Latest issue</h2><span class="mono">Week 48 · 2026</span></div>
+    <div class="issue">
+      <div>
+        <p class="mono" style="color:var(--mute);margin:0">From the latest issue</p>
+        <h3>2,500 homes, no factory required</h3>
+        <p style="margin:0;color:var(--ink-2)">Eight stories this week, from robot-built houses in Alberta to bricks made of moon dust. Here are two of them.</p>
+      </div>
+      <div class="mock" role="img" aria-label="Preview of the week 48 email">
+        <div class="hd"><span>From</span><b>The Build Report</b><span>Subject</span><b>2,500 homes, no factory required</b></div>
+        <p>Production is starting to leave the lot. A Canadian robotics firm raised CA$40M to sell builders factory capacity, and a lab showed what moon dust could become.</p>
+        <h4>Promise Robotics: housing without owning the factory</h4>
+        <h4>Masonry from moon dust, no binder</h4>
+        <h4>Taisei writes a US$150M check</h4>
+        <p class="take">My take, under every story</p>
+      </div>
+    </div>
+    <div class="stories">
+      <article class="story">
+        <h4>Promise Robotics raises CA$40M to sell factory capacity to homebuilders</h4>
+        <p>Promise takes a builder's existing designs, runs them through its robotic plants in Alberta and sells the output. It has more than 2,500 homes under contract, and D.R. Horton has signed on.</p>
+        <div class="my"><b>My take</b><p>Forget the funding round. What I'd watch is that builders get the homes without ever running a plant.</p></div>
+      </article>
+      <article class="story">
+        <h4>University of Arkansas fuses simulated moon dust into LEGO-like bricks</h4>
+        <p>A laser turns lunar regolith simulant into interlocking blocks a few centimeters wide, with no binder. They stand on their own but can't carry a load yet.</p>
+        <div class="my"><b>My take</b><p>Tiny, and untested in vacuum. Still, a brick with no glue is a decent first step for building on the Moon.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="watch" class="block">
+  <div class="wrap">
+    <div class="sheet"><h2>Watch</h2>
+      <div class="filters" role="group" aria-label="Filter videos">
+        <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="ex">Explainers</button><button aria-pressed="false" data-f="ep">Episodes</button><button aria-pressed="false" data-f="lab">Lab</button>
+      </div>
+    </div>
+    <div class="index">
+      <a class="row" data-k="ex" href="https://x.com/leeeecu/status/2124919397554811385" target="_blank" rel="noopener"><img src="../img/ep04.jpg" alt="" loading="lazy" style="filter:grayscale(1)"><span class="mono kind">Explainer · W48</span><div><h4>Why are builders suddenly betting on robots?</h4><p>Taisei, Kajima, Promise Robotics and moon-dust bricks in 97 seconds.</p></div><span class="arr" aria-hidden="true">↗</span></a>
+      <div class="row" data-k="ep"><img src="../img/ep04.jpg" alt="Ep 4 cover: robot arm holding a pen above a board" loading="lazy"><span class="mono kind">Episode 4</span><div><h4>Straight path. Pen off by 25.6 mm?</h4><p>Why a straight gripper path does not guarantee a straight pen line.</p></div><span></span></div>
+      <div class="row" data-k="lab"><img src="../img/lab01.jpg" alt="LAB/01: point-cloud arm with two paths" loading="lazy"><span class="mono kind">Lab 01</span><div><h4>Is a straight move really straight?</h4><p>Joint interpolation drifts 39.8 mm; Cartesian IK stays within 0.01 mm.</p></div><span></span></div>
+      <div class="row" data-k="ep"><img src="../img/ep03.jpg" alt="Ep 3: arm reaching a target point" loading="lazy"><span class="mono kind">Episode 3</span><div><h4>Seeing a target doesn't make it reachable.</h4><p>Reachable workspace versus what the camera sees.</p></div><span></span></div>
+      <div class="row" data-k="ep"><img src="../img/ep02.jpg" alt="Ep 2: two gripper paths compared" loading="lazy"><span class="mono kind">Episode 2</span><div><h4>Same start. Same finish. Different paths.</h4><p>Joint-space versus Cartesian motion, side by side.</p></div><span></span></div>
+      <div class="row" data-k="ep"><img src="../img/ep01.jpg" alt="Ep 1: SO-101 robot arm" loading="lazy"><span class="mono kind">Episode 1</span><div><h4>Six motors. But not a six-axis arm.</h4><p>What each motor of a small open-source arm actually does.</p></div><span></span></div>
+    </div>
+    <p class="fine">New videos go to <a href="https://www.youtube.com/@unbuilt.robotics" target="_blank" rel="noopener">YouTube</a>, <a href="https://www.linkedin.com/company/unbuilt-media/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://x.com/leeeecu" target="_blank" rel="noopener">X</a>. SO-101 episodes are computed kinematic simulations, not hardware tests. Geometry: TheRobotStudio SO-ARM100 (Apache-2.0).</p>
+  </div>
+</section>
+
+<section id="notes" class="block">
+  <div class="wrap">
+    <div class="sheet"><h2>Case notes</h2><span class="mono">What · why it matters · one limit</span></div>
+    <div class="notes">
+      <article class="n"><p class="mono meta">Paper · MIT CBA · Aug 2026</p><h4>Robots that build reconfigurable structures from self-aligning lattice modules</h4><p>Modules whose geometry gives robots surfaces to grasp and self-align, with snap-fit connectors so structures can be taken apart and rebuilt.</p><p><b>Limit:</b> stiff lattices that rely on connectors rather than structural form.</p><a href="https://arxiv.org/abs/2608.07576" target="_blank" rel="noopener">Read on arXiv ↗</a></article>
+      <article class="n"><p class="mono meta">Funding · ICD Stuttgart · Oct 2026</p><h4>Teams of robots for real construction sites: SCALAR and COBRAS</h4><p>Two EIC Pathfinder projects, about €4 million each, on autonomous multi-robot systems for unstructured sites.</p><p><b>Limit:</b> new projects; results are still to come.</p><a href="https://www.intcdc.uni-stuttgart.de/news-events/news/detail/Robot-teams-for-construction-sites" target="_blank" rel="noopener">Read the announcement ↗</a></article>
+      <article class="n"><p class="mono meta">Project · Polyhedral Structures Lab, UPenn</p><h4>A 3D-printed, compression-dominant concrete floor</h4><p>A funicular floor printed with a 5-axis arm from 24 segments, post-tensioned in two directions.</p><p><b>Limit:</b> columns still use printed shells as lost formwork around conventional concrete.</p><a href="https://psl.design.upenn.edu/project/3d-printed-dual-banded-high-performance-concrete-floor" target="_blank" rel="noopener">See the project ↗</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="next" class="block">
+  <div class="wrap">
+    <div class="sheet"><h2>Coming up</h2><span class="mono">Schedule · not yet dated</span></div>
+    <table class="sched">
+      <thead><tr><th>Item</th><th>What it is</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Visits, Barcelona</td><td>On-site stories from fabrication labs, robotics and 3D-printing startups, and university workshops. <a href="mailto:fu6fu62@gmail.com?subject=UN%2FBUILT%20Visits">Invite UN/BUILT</a></td><td><span class="badge">Planned</span></td></tr>
+        <tr><td>Grasshopper to robot toolpaths</td><td>Workshop: turn parametric geometry into targets and safe approach moves for an industrial arm.</td><td><span class="badge">Planned</span></td></tr>
+        <tr><td>Robot kinematics for architects</td><td>Workshop: joints, reach, singularities and why the tool tip matters, taught with simulations.</td><td><span class="badge">Planned</span></td></tr>
+        <tr><td>Scan to fabrication</td><td>Workshop: from point clouds to measured geometry and printable repair parts.</td><td><span class="badge">Planned</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="about" class="block">
+  <div class="wrap about">
+    <h2>Hi, I'm Chi.</h2>
+    <div>
+      <p>I'm an architectural designer who spent the last few years around robot arms, 3D printers and computational design in Barcelona: Robotics and Advanced Construction at IAAC, and the MADE master's at UPC.</p>
+      <p>I started UN/BUILT because news about construction robots is usually written for investors. I want to know what it changes for the people who design and build. Claims link to primary sources, simulations are labelled as simulations, and other people's work is credited.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<section id="join" class="join">
+  <div class="wrap">
+    <h2>Get next week's issue.</h2>
+    <p>The Build Report: the week in construction robotics, with an architect's take under every story.</p>
+    <form class="signup" action="https://rs-newsletter-a33182.beehiiv.com/subscribe" method="get">
+      <label class="sr" for="em-bottom">Email address</label>
+      <input id="em-bottom" type="email" name="email" placeholder="you@studio.com" autocomplete="email" required>
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+    <p class="note">Free. One email a week. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="#top">UN<span>/</span>BUILT</a>
+    <nav aria-label="Elsewhere">
+      <a href="https://www.linkedin.com/company/unbuilt-media/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/leeeecu" target="_blank" rel="noopener">X</a>
+      <a href="https://www.youtube.com/@unbuilt.robotics" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://linktr.ee/unbuilt_hq" target="_blank" rel="noopener">All links</a>
+      <a href="mailto:fu6fu62@gmail.com">Contact</a>
+    </nav>
+    <p class="fine" style="width:100%;margin:8px 0 0">© 2026 UN/BUILT · Written in Barcelona.</p>
+  </div>
+</footer>
+
+<script>
+const mb=document.querySelector('.menu'),nl=document.getElementById('navlist');
+mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');
+  const f=b.dataset.f;document.querySelectorAll('.index .row').forEach(r=>r.classList.toggle('hide',f!=='all'&&r.dataset.k!==f));
+}));
+</script>
+</body>
+</html>
